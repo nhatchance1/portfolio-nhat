@@ -1,0 +1,109 @@
+body{
+    margin:0;
+    font-family:Arial;
+    color:white;
+
+    background: linear-gradient(-45deg, #ff00cc, #3333ff, #00ffee, #ffcc00);
+
+    animation: gradient 10s ease infinite;
+}
+
+.content{
+    text-align:center;
+}
+
+h1{
+font-size:60px;
+text-shadow:0 0 20px rgba(255,255,255,0.8);
+}
+
+@keyframes gradient{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+header{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+nav{
+    background:#222;
+    text-align:center;
+    padding:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00ffd5;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.projects{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:40px;
+}
+
+/* Container bao quanh 5 cái card */
+.scroll-container {
+    display: flex;            /* Ép các card dàn hàng ngang */
+    overflow-x: auto;         /* Hiện thanh cuộn khi tràn */
+    gap: 25px;                /* Khoảng cách giữa các card */
+    padding: 30px 20px;       /* Padding trên dưới để không bị mất hiệu ứng hover */
+    scroll-behavior: smooth;   /* Cuộn mượt */
+    
+    /* Ẩn thanh cuộn trên Chrome/Safari/Edge (tùy chọn) */
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Tùy chỉnh thanh cuộn cho đẹp hơn */
+.scroll-container::-webkit-scrollbar {
+    height: 6px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.card{
+    background:white;
+    flex: 0 0 250px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    overflow: hidden;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
