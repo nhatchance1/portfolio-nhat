@@ -110,6 +110,15 @@ nav a:hover{
     margin-bottom: 15px;
 }
 
+html {
+    scroll-behavior: smooth; 
+}
+
+section {
+    min-height: 100vh; /* Mỗi phần chiếm ít nhất toàn bộ chiều cao màn hình */
+    padding-top: 80px; /* Tránh bị thanh Menu che mất tiêu đề khi cuộn đến */
+}
+
 footer{
     background:#222;
     color:white;
