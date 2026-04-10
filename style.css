@@ -2,14 +2,17 @@ body{
     margin:0;
     font-family:Arial;
     color:white;
-
-    background: linear-gradient(-45deg, #ff00cc, #3333ff, #00ffee, #ffcc00);
+    line-height: 1.6;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #3b0764, #1e1b4b);
     padding: 0;
-    /* Ép lấp đầy màn hình bằng Viewport Height */
-    height: 100vh;
     animation: gradient 10s ease infinite;
 }
-
+/* Cập nhật Keyframes cho mượt hơn với màu tối */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 .content{
     text-align:center;
 }
@@ -62,12 +65,11 @@ nav a:hover{
 }
 
 .projects{
-    display:flex;
+    
     justify-content:center;
     gap:20px;
     padding:40px;
-    max-width: 800px; /* Bạn có thể đặt giới hạn độ rộng */
-
+    margin: 0 auto;
 }
 
 /* Container bao quanh 5 cái card */
@@ -77,7 +79,12 @@ nav a:hover{
     gap: 25px;                /* Khoảng cách giữa các card */
     padding: 30px 20px;       /* Padding trên dưới để không bị mất hiệu ứng hover */
     scroll-behavior: smooth;   /* Cuộn mượt */
+    /* CĂN GIỮA CONTAINER */
+    max-width: 1600px; /* Hoặc độ rộng bạn muốn */
+    margin: 0 auto;    /* Căn giữa khối này so với màn hình */
     
+    /* Đảm bảo các card bên trong cũng được căn giữa nếu tổng chiều rộng ít hơn 1200px */
+    justify-content: flex-start; /* Mặc định là lệch trái để cuộn, nếu muốn ở giữa khi ít card thì đổi thành center */
     /* Ẩn thanh cuộn trên Chrome/Safari/Edge (tùy chọn) */
     -webkit-overflow-scrolling: touch; 
 }
@@ -99,6 +106,7 @@ nav a:hover{
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
     transition:0.3s;
     overflow: hidden;
+    color: #333;
 }
 
 .card:hover{
@@ -120,8 +128,81 @@ html {
 }
 
 section {
-    min-height: 100vh; /* Mỗi phần chiếm ít nhất toàn bộ chiều cao màn hình */
-    padding-top: 80px; /* Tránh bị thanh Menu che mất tiêu đề khi cuộn đến */
+    padding: 60px 0; /* Tạo khoảng cách trên dưới đồng đều 60px */
+
+}
+
+/* Container tổng */
+.project-detail {
+    max-width: 900px;      /* Giới hạn độ rộng để dễ đọc */
+    margin: 0 auto;        /* Căn giữa toàn bộ khối */
+    padding: 20px;
+    color: white;          /* Chữ trắng nổi bật trên nền tối */
+}
+
+/* Phần chứa ảnh */
+.project-media {
+    display: flex;
+    justify-content: center; /* Căn giữa ảnh theo chiều ngang */
+    margin-bottom: 40px;     /* Khoảng cách dưới ảnh */
+}
+
+.main-img {
+    width: 100%;           /* Ảnh co giãn theo khung */
+    max-width: 700px;      /* Nhưng không quá to làm vỡ ảnh */
+    height: auto;
+    border-radius: 15px;   /* Bo tròn góc cho hiện đại */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Đổ bóng sâu để ảnh nổi lên */
+}
+
+/* Phần thông tin */
+.project-info {
+    text-align: left;      /* Chữ nên căn trái để dễ đọc đoạn văn dài */
+    line-height: 1.8;      /* Giãn dòng rộng để không bị dính chữ */
+}
+
+.project-info h2 {
+    text-align: center;    /* Riêng tiêu đề dự án căn giữa */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #00ffee;        /* Màu nhấn mạnh (Cyan) */
+}
+
+.tagline {
+    text-align: center;
+    color: #bbb;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.description h3 {
+    margin-top: 30px;
+    border-left: 4px solid #00ffee; /* Tạo gạch đứng bên trái tiêu đề nhỏ */
+    padding-left: 15px;
+}
+
+.description ul {
+    padding-left: 20px;
+}
+
+.separator {
+    height: 2px;
+    width: 60%;
+    margin: 60px auto;
+    /* Gradient từ trong suốt sang màu sáng rồi lại trong suốt */
+    background: linear-gradient(to right, transparent, #00ffee, #3333ff, transparent);
+    border: none;
+    border-radius: 50%;
+    filter: blur(0.5px); /* Làm mềm đường kẻ */
+    box-shadow: 0 0 15px rgba(0, 255, 238, 0.4); /* Hiệu ứng tỏa sáng */
+}
+
+/* Container bao ngoài để tạo khoảng cách xuống dòng */
+.divider-wrapper {
+    width: 100%;
+    padding: 20px 0; /* Tạo khoảng trống 60px trên và dưới đường kẻ */
+    display: flex;
+    justify-content: center; /* Căn giữa đường kẻ */
 }
 
 footer{
